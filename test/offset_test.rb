@@ -9,7 +9,23 @@ class OffsetTest < Minitest::Test
     @offset = Offset.new("12345", "020202")
   end
 
-  def test_
+  def test_has_a_date
+
+  end
+
+  def test_has_a_squared_date
+
+  end
+
+  def test_has_selected_offsets
+
+  end
+
+  def test_has_key
+
+  end
+
+  def 
 
 
 end

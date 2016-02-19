@@ -3,18 +3,21 @@ require 'pry'
 
 class Encryptor
 
+attr_reader :string, :rotation, :rotation_array, :char_array, :index, :dictionary
+
   def initialize(string, rotation_array)
     @string = string
     @rotation = 0
     @rotation_array = rotation_array
     @char_array = []
     @index = 0
+    @dictionary
   end
 
   def cipher(rotation)
       characters = (' '..'z').to_a
       characters_rotated = characters.rotate(@rotation_array[@index])
-      Hash[characters.zip(characters_rotated)]
+      @dictionary = Hash[characters.zip(characters_rotated)]
   end
 
   def splitting_character_array
@@ -36,7 +39,7 @@ class Encryptor
         new_char_array << encrypt_letter(char, @index)
         @index += 1
     end
-    new_char_array.join
+    puts new_char_array.join
   end
 
   def decrypt_letter(letter, index)
@@ -53,7 +56,7 @@ class Encryptor
       end
       new_char_array << decrypt_letter(char, @index)
     end
-    new_char_array.join
+    puts new_char_array.join
   end
 
 end

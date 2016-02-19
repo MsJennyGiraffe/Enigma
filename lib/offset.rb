@@ -1,8 +1,9 @@
 require_relative 'key_generator'
+require 'pry'
 
 class Offset
 
-attr_reader: dq
+attr_reader :squared_date, :selected_offsets, :offset_array, :key, :key_array, :rotation_array
 
   def initialize(key = KeyGenerator.new.generate_key, date = Time.now.strftime('%m%d%y'))
     @squared_date = date.to_i * date.to_i
@@ -52,10 +53,6 @@ attr_reader: dq
     c_rotation = @offset_array[2] + @key_array[2]
     d_rotation = @offset_array[3] + @key_array[3]
 
-    rotation_array = [a_rotation, b_rotation, c_rotation, d_rotation]
+    @rotation_array = [a_rotation, b_rotation, c_rotation, d_rotation]
   end
-
-  # def changing_to_an_integer
-  #
-  # end
 end

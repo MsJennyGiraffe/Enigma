@@ -61,13 +61,12 @@ class OffsetTest < Minitest::Test
   end
 
   def test_rotation_with_offset_adds_offset_and_key
-    @offset.rotation_with_offset
-    assert_equal [], @offset.rotation_with_offset
-
+    assert_equal [12, 31, 34, 49], @offset.rotation_with_offset
   end
 
-  def test_rotation_array_had_four_integers
-
+  def test_rotation_array_has_four_integers
+    @offset.rotation_with_offset
+    assert_equal Fixnum, @offset.rotation_array[0].class
   end
 
 end

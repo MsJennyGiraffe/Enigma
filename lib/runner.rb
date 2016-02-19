@@ -1,16 +1,9 @@
 require_relative 'encryptor'
-require_relative 'key_generator'
-require_relative 'offset'
 
-# e = Encryptor.new
-# puts e.code(3)
+o = Offset.new
+# puts o.rotation_with_offset
 
-#key_generator
-# k = KeyGenerator.new
-# k.random_number_generator
-
-o = Offset.new("12345", 021616)
-o.rotation_with_offset
-
-e = Encryptor.new
-puts e.code
+e = Encryptor.new("poop", [2,2,2,2])
+puts e.encrypt
+e1 = Encryptor.new("rqqr", [2,2,2,2])
+puts e1.decrypt

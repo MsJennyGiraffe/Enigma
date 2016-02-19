@@ -1,6 +1,3 @@
-#should hold
-  #def key generation
-
 class KeyGenerator
 
   def generate_random_number
